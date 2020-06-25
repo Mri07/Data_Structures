@@ -60,9 +60,17 @@ public class Insert_Delete_CircularQueue
 				
 				System.out.println("continue ? (Y/N)");
 				ch = dis.readLine().charAt(0);
-			}		
-		}
+			}
+		}		
 		
+		private void frontElement() 
+		{
+			System.out.println("FRONT => "+queue[front]);
+		}
+		private void rearElement() 
+		{
+			System.out.println("REAR => "+queue[rear]);			
+		}
 		private void push(int num) 
 		{
 			if((front == 0 && rear == queue.length-1)  )
@@ -91,7 +99,7 @@ public class Insert_Delete_CircularQueue
 				System.out.println("Removed "+value);
 			   System.out.println("continue ? (Y/N)");
 			   ch = dis.readLine().charAt(0);
-		    }		
+		    }
 		}
 
 		private int pop() 
@@ -122,7 +130,7 @@ public class Insert_Delete_CircularQueue
 		
 		private void display() 
 		{
-			if(front == rear)
+			if(front == -1 && rear == -1)
 			{
 				System.out.println("\nEmpty Queue ");
 				return;
@@ -130,6 +138,10 @@ public class Insert_Delete_CircularQueue
 			System.out.println("\nQueue Elements =>");
 			for(int i=front ; i<=rear ; i++)
 				System.out.print(queue[i]+" ");
+			
+			System.out.println("");
+			frontElement();
+			rearElement();
 			
 			System.out.println("");
 		}
